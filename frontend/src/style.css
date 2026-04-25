@@ -1,0 +1,202 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+@import "tailwindcss";
+
+@custom-variant dark (&:is(.dark *));
+@plugin "tailwindcss-animate";
+
+@theme {
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+
+  --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
+
+  --color-popover: hsl(var(--popover));
+  --color-popover-foreground: hsl(var(--popover-foreground));
+
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+
+  --color-secondary: hsl(var(--secondary));
+  --color-secondary-foreground: hsl(var(--secondary-foreground));
+
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+
+  --color-accent: hsl(var(--accent));
+  --color-accent-foreground: hsl(var(--accent-foreground));
+
+  --color-destructive: hsl(var(--destructive));
+  --color-destructive-foreground: hsl(var(--destructive-foreground));
+
+  --color-warning: hsl(var(--warning));
+  --color-success: hsl(var(--success));
+
+  --color-border: hsl(var(--border));
+  --color-border-light: hsl(var(--border-light));
+  --color-input: hsl(var(--input));
+  --color-ring: hsl(var(--ring));
+
+  --radius-lg: var(--radius);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-sm: calc(var(--radius) - 4px);
+}
+
+@layer base {
+  :root {
+    /* shadcn/ui 深色主题 */
+    --background: 240 10% 3.9%;      /* #09090b */
+    --foreground: 0 0% 98%;          /* #fafafa */
+
+    --card: 240 10% 3.9%;           /* #09090b */
+    --card-foreground: 0 0% 98%;    /* #fafafa */
+
+    --popover: 240 10% 3.9%;        /* #09090b */
+    --popover-foreground: 0 0% 98%; /* #fafafa */
+
+    --primary: 0 0% 98%;            /* #fafafa */
+    --primary-foreground: 240 5.9% 10%; /* #18181b */
+    --primary-glow: rgba(250, 250, 250, 0.15);
+
+    --secondary: 240 3.7% 15.9%;    /* #27272a */
+    --secondary-foreground: 0 0% 98%; /* #fafafa */
+
+    --muted: 240 3.7% 15.9%;        /* #27272a */
+    --muted-foreground: 240 5% 64.9%; /* #a1a1aa */
+
+    --accent: 240 3.7% 15.9%;       /* #27272a */
+    --accent-foreground: 0 0% 98%;  /* #fafafa */
+
+    --destructive: 0 62.8% 30.6%;   /* #7f1d1d */
+    --destructive-foreground: 0 0% 98%; /* #fafafa */
+
+    --warning: 38 92% 50%;          /* #f59e0b */
+    --success: 142 71% 45%;         /* #22c55e */
+
+    --border: 240 3.7% 15.9%;       /* #27272a */
+    --border-light: 240 5% 26%;     /* #3f3f46 */
+    --input: 240 3.7% 15.9%;        /* #27272a */
+    --ring: 240 4.9% 83.9%;         /* #d4d4d8 */
+
+    --radius: 0.5rem;
+    --shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  }
+
+  /* 浅色主题 - shadcn/ui */
+  [data-theme="light"] {
+    --background: 0 0% 100%;        /* #ffffff */
+    --foreground: 240 10% 3.9%;     /* #09090b */
+
+    --card: 0 0% 100%;              /* #ffffff */
+    --card-foreground: 240 10% 3.9%; /* #09090b */
+
+    --popover: 0 0% 100%;           /* #ffffff */
+    --popover-foreground: 240 10% 3.9%; /* #09090b */
+
+    --primary: 240 5.9% 10%;        /* #18181b */
+    --primary-foreground: 0 0% 98%; /* #fafafa */
+    --primary-glow: rgba(24, 24, 27, 0.1);
+
+    --secondary: 240 4.8% 95.9%;    /* #f4f4f5 */
+    --secondary-foreground: 240 5.9% 10%; /* #18181b */
+
+    --muted: 240 4.8% 95.9%;        /* #f4f4f5 */
+    --muted-foreground: 240 3.8% 46.1%; /* #71717a */
+
+    --accent: 240 4.8% 95.9%;       /* #f4f4f5 */
+    --accent-foreground: 240 5.9% 10%; /* #18181b */
+
+    --destructive: 0 84.2% 60.2%;   /* #ef4444 */
+    --destructive-foreground: 0 0% 98%; /* #fafafa */
+
+    --warning: 38 92% 50%;          /* #f59e0b */
+    --success: 142 71% 45%;         /* #22c55e */
+
+    --border: 240 5.9% 90%;         /* #e4e4e7 */
+    --border-light: 240 5% 84%;     /* #d4d4d8 */
+    --input: 240 5.9% 90%;          /* #e4e4e7 */
+    --ring: 240 5.9% 10%;           /* #18181b */
+
+    --shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  }
+
+  /* 自动模式: 跟随系统 - shadcn/ui */
+  @media (prefers-color-scheme: light) {
+    :root:not([data-theme]) {
+      --background: 0 0% 100%;
+      --foreground: 240 10% 3.9%;
+
+      --card: 0 0% 100%;
+      --card-foreground: 240 10% 3.9%;
+
+      --popover: 0 0% 100%;
+      --popover-foreground: 240 10% 3.9%;
+
+      --primary: 240 5.9% 10%;
+      --primary-foreground: 0 0% 98%;
+      --primary-glow: rgba(24, 24, 27, 0.1);
+
+      --secondary: 240 4.8% 95.9%;
+      --secondary-foreground: 240 5.9% 10%;
+
+      --muted: 240 4.8% 95.9%;
+      --muted-foreground: 240 3.8% 46.1%;
+
+      --accent: 240 4.8% 95.9%;
+      --accent-foreground: 240 5.9% 10%;
+
+      --destructive: 0 84.2% 60.2%;
+      --destructive-foreground: 0 0% 98%;
+
+      --warning: 38 92% 50%;
+      --success: 142 71% 45%;
+
+      --border: 240 5.9% 90%;
+      --border-light: 240 5% 84%;
+      --input: 240 5.9% 90%;
+      --ring: 240 5.9% 10%;
+
+      --shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    }
+  }
+}
+
+@layer base {
+  * {
+    border-color: hsl(var(--border));
+  }
+  body {
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    transition: background-color 0.2s, color 0.2s;
+  }
+
+  /* 确保所有文本默认继承前景色 */
+  h1, h2, h3, h4, h5, h6, p, span, div:not([class*="text-"]), label, a, button:not([class*="dialog-close"]):not([data-slot="dialog-close"]), textarea, select {
+    color: inherit;
+  }
+
+  /* 主题切换按钮样式 */
+  .theme-toggle-btn svg {
+    width: 16px;
+    height: 16px;
+    stroke: currentColor;
+  }
+
+  /* 浅色模式下的主题切换按钮 - 只设置文字颜色,背景由 bg-secondary 控制 */
+  [data-theme="light"] .theme-toggle-btn {
+    color: hsl(var(--foreground));
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}

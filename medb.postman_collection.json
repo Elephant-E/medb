@@ -1,0 +1,1396 @@
+{
+  "info": {
+    "_postman_id": "ed562582-0a1a-47fc-b8b6-a68b468d1028",
+    "name": "medb",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "51719937",
+    "_collection_link": "https://go.postman.co/collection/51442337-ed562582-0a1a-47fc-b8b6-a68b468d1028?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "登录",
+      "item": [
+        {
+          "name": "登录",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{url}}/sign?url",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "sign"
+              ],
+              "query": [
+                {
+                  "key": "url",
+                  "value": null
+                }
+              ]
+            },
+            "description": "当传入 `url` 字段时 会带着 `token` 重定向到此页面"
+          },
+          "response": []
+        },
+        {
+          "name": "用户信息",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{url}}/sign/info",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "sign",
+                "info"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "已登录时",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{url}}/sign/info",
+                  "host": [
+                    "{{url}}"
+                  ],
+                  "path": [
+                    "sign",
+                    "info"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "Host",
+                  "value": "127.0.0.1:8000"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                },
+                {
+                  "key": "X-Powered-By",
+                  "value": "PHP/8.5.3"
+                },
+                {
+                  "key": "Cache-Control",
+                  "value": "no-cache, private"
+                },
+                {
+                  "key": "Date",
+                  "value": "Mon, 23 Feb 2026 06:57:55 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"is_sign\": true,\n    \"id\": 1000,\n    \"avatar\": null,\n    \"username\": \"soa\"\n}"
+            },
+            {
+              "name": "未登录时",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{url}}/sign/info",
+                  "host": [
+                    "{{url}}"
+                  ],
+                  "path": [
+                    "sign",
+                    "info"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "Host",
+                  "value": "127.0.0.1:8000"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                },
+                {
+                  "key": "X-Powered-By",
+                  "value": "PHP/8.5.3"
+                },
+                {
+                  "key": "Cache-Control",
+                  "value": "no-cache, private"
+                },
+                {
+                  "key": "Date",
+                  "value": "Mon, 23 Feb 2026 06:58:38 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"is_sign\": false\n}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "媒体",
+      "item": [
+        {
+          "name": "图标",
+          "item": [
+            {
+              "name": "列表",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{url}}/media/icon/index",
+                  "host": [
+                    "{{url}}"
+                  ],
+                  "path": [
+                    "media",
+                    "icon",
+                    "index"
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "name": "列表",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [],
+                    "url": {
+                      "raw": "{{url}}/media/icon/index",
+                      "host": [
+                        "{{url}}"
+                      ],
+                      "path": [
+                        "media",
+                        "icon",
+                        "index"
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "",
+                  "header": [
+                    {
+                      "key": "Host",
+                      "value": "127.0.0.1:8000"
+                    },
+                    {
+                      "key": "Connection",
+                      "value": "close"
+                    },
+                    {
+                      "key": "X-Powered-By",
+                      "value": "PHP/8.5.3"
+                    },
+                    {
+                      "key": "Cache-Control",
+                      "value": "no-cache, private"
+                    },
+                    {
+                      "key": "Date",
+                      "value": "Mon, 23 Feb 2026 05:09:59 GMT"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [
+                    {
+                      "expires": "Invalid Date",
+                      "domain": "",
+                      "path": ""
+                    }
+                  ],
+                  "body": "{\n    \"page\": 1,\n    \"page_size\": 15,\n    \"total\": 1,\n    \"items\": [\n        {\n            \"id\": 6,\n            \"media_list_id\": 1001,\n            \"name\": \"张三的服2\",\n            \"url\": \"https://medb.local/emby1.png\",\n            \"path\": \"storage/emby.png\",\n            \"user\": {\n                \"id\": 1000,\n                \"avatar\": null,\n                \"username\": \"soa\"\n            },\n            \"is_can_delete\": true,\n            \"created_at\": \"2026-02-23T03:25:12.000000Z\"\n        }\n    ]\n}"
+                }
+              ]
+            },
+            {
+              "name": "新增",
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    // 媒体ID 可为空\n    \"media_list_id\": 1000,\n    // 图标名称 建议为 服的名称 + 上传者 必填\n    \"name\": \"张三的服 @name\",\n    // 上传的文件路径 必填\n    \"path\": \"storage/emby.png\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{url}}/media/icon/create",
+                  "host": [
+                    "{{url}}"
+                  ],
+                  "path": [
+                    "media",
+                    "icon",
+                    "create"
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "name": "新增",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n    // 媒体ID 可为空\n    \"media_list_id\": 1000,\n    // 图标名称 建议为 服的名称 + 上传者 必填\n    \"name\": \"张三的服 @name\",\n    // 上传的文件路径 必填\n    \"path\": \"storage/emby.png\"\n}",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{url}}/media/icon/create",
+                      "host": [
+                        "{{url}}"
+                      ],
+                      "path": [
+                        "media",
+                        "icon",
+                        "create"
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": null,
+                  "header": [
+                    {
+                      "key": "Host",
+                      "value": "127.0.0.1:8000"
+                    },
+                    {
+                      "key": "Connection",
+                      "value": "close"
+                    },
+                    {
+                      "key": "X-Powered-By",
+                      "value": "PHP/8.5.3"
+                    },
+                    {
+                      "key": "Cache-Control",
+                      "value": "no-cache, private"
+                    },
+                    {
+                      "key": "Date",
+                      "value": "Mon, 23 Feb 2026 05:15:27 GMT"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n    \"id\": 7\n}"
+                }
+              ]
+            },
+            {
+              "name": "删除",
+              "request": {
+                "method": "DELETE",
+                "header": [],
+                "url": {
+                  "raw": "{{url}}/media/icon/delete?id=1",
+                  "host": [
+                    "{{url}}"
+                  ],
+                  "path": [
+                    "media",
+                    "icon",
+                    "delete"
+                  ],
+                  "query": [
+                    {
+                      "key": "id",
+                      "value": "1",
+                      "description": "图标ID"
+                    }
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "name": "删除",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [],
+                    "url": {
+                      "raw": "{{url}}/media/icon/delete?id=1",
+                      "host": [
+                        "{{url}}"
+                      ],
+                      "path": [
+                        "media",
+                        "icon",
+                        "delete"
+                      ],
+                      "query": [
+                        {
+                          "key": "id",
+                          "value": "1",
+                          "description": "图标ID"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": null,
+                  "header": [
+                    {
+                      "key": "Host",
+                      "value": "127.0.0.1:8000"
+                    },
+                    {
+                      "key": "Connection",
+                      "value": "close"
+                    },
+                    {
+                      "key": "X-Powered-By",
+                      "value": "PHP/8.5.3"
+                    },
+                    {
+                      "key": "Cache-Control",
+                      "value": "no-cache, private"
+                    },
+                    {
+                      "key": "Date",
+                      "value": "Mon, 23 Feb 2026 05:16:57 GMT"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n    \"is_delete\": false\n}"
+                }
+              ]
+            },
+            {
+              "name": "适用于emby的图标库",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{url}}/media/icon/library",
+                  "host": [
+                    "{{url}}"
+                  ],
+                  "path": [
+                    "media",
+                    "icon",
+                    "library"
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "name": "适用于emby的图标库",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [],
+                    "url": {
+                      "raw": "{{url}}/media/icon/library",
+                      "host": [
+                        "{{url}}"
+                      ],
+                      "path": [
+                        "media",
+                        "icon",
+                        "library"
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "",
+                  "header": [
+                    {
+                      "key": "Host",
+                      "value": "127.0.0.1:8000"
+                    },
+                    {
+                      "key": "Connection",
+                      "value": "close"
+                    },
+                    {
+                      "key": "X-Powered-By",
+                      "value": "PHP/8.5.3"
+                    },
+                    {
+                      "key": "Cache-Control",
+                      "value": "no-cache, private"
+                    },
+                    {
+                      "key": "Date",
+                      "value": "Mon, 23 Feb 2026 05:42:17 GMT"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [
+                    {
+                      "expires": "Invalid Date",
+                      "domain": "",
+                      "path": ""
+                    }
+                  ],
+                  "body": "{\n    \"name\": \"medb 媒体库图标\",\n    \"description\": \"缓存10分钟 欢迎自助更新 https://medb.lat/\",\n    \"updated_at\": \"2026-02-23 13:42:13\",\n    \"icons\": [\n        {\n            \"icon_id\": 6,\n            \"name\": \"张三的服2\",\n            \"url\": \"http://localhost/storage/storage/emby.png\"\n        }\n    ]\n}"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "统计",
+          "item": [
+            {
+              "name": "列表",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{url}}/media/statistics/index?media_list_id=&date_start&date_end",
+                  "host": [
+                    "{{url}}"
+                  ],
+                  "path": [
+                    "media",
+                    "statistics",
+                    "index"
+                  ],
+                  "query": [
+                    {
+                      "key": "media_list_id",
+                      "value": "",
+                      "description": "媒体ID"
+                    },
+                    {
+                      "key": "date_start",
+                      "value": null,
+                      "description": "开始日期"
+                    },
+                    {
+                      "key": "date_end",
+                      "value": null,
+                      "description": "结束日期"
+                    }
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "name": "列表",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [],
+                    "url": {
+                      "raw": "{{url}}/media/statistics/index?media_list_id=&date_start&date_end",
+                      "host": [
+                        "{{url}}"
+                      ],
+                      "path": [
+                        "media",
+                        "statistics",
+                        "index"
+                      ],
+                      "query": [
+                        {
+                          "key": "media_list_id",
+                          "value": "",
+                          "description": "媒体ID"
+                        },
+                        {
+                          "key": "date_start",
+                          "value": null,
+                          "description": "开始日期"
+                        },
+                        {
+                          "key": "date_end",
+                          "value": null,
+                          "description": "结束日期"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": null,
+                  "header": [
+                    {
+                      "key": "Host",
+                      "value": "127.0.0.1:8000"
+                    },
+                    {
+                      "key": "Connection",
+                      "value": "close"
+                    },
+                    {
+                      "key": "X-Powered-By",
+                      "value": "PHP/8.5.3"
+                    },
+                    {
+                      "key": "Cache-Control",
+                      "value": "no-cache, private"
+                    },
+                    {
+                      "key": "Date",
+                      "value": "Mon, 23 Feb 2026 04:55:58 GMT"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n    \"page\": 1,\n    \"page_size\": 20,\n    \"total\": 3,\n    \"items\": [\n        {\n            \"id\": 1,\n            \"media_list_id\": 1,\n            \"report_at\": \"2026-02-23T02:35:20.000000Z\",\n            \"report_type\": \"cron\",\n            \"report_user\": null,\n            \"counts\": {\n                \"movie\": 33,\n                \"series\": 6,\n                \"episode\": 84\n            }\n        },\n        {\n            \"id\": 2,\n            \"media_list_id\": 1000,\n            \"report_at\": \"2026-02-23T04:44:39.000000Z\",\n            \"report_type\": \"user\",\n            \"report_user\": {\n                \"id\": 1000,\n                \"avatar\": null,\n                \"username\": \"soa\"\n            },\n            \"counts\": {\n                \"movie\": 10,\n                \"series\": 100,\n                \"episode\": 1000\n            }\n        },\n        {\n            \"id\": 3,\n            \"media_list_id\": 1000,\n            \"report_at\": \"2026-02-23T04:46:57.000000Z\",\n            \"report_type\": \"api\",\n            \"report_user\": null,\n            \"counts\": {\n                \"movie\": 11,\n                \"series\": 12,\n                \"episode\": 12\n            }\n        }\n    ]\n}"
+                }
+              ]
+            },
+            {
+              "name": "创建",
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"media_list_id\": 1000,\n    \"movie\": 10,\n    \"series\": 100,\n    \"episode\": 1000\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{url}}/media/statistics/create",
+                  "host": [
+                    "{{url}}"
+                  ],
+                  "path": [
+                    "media",
+                    "statistics",
+                    "create"
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "name": "创建",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n    \"media_list_id\": 1000,\n    \"movie\": 10,\n    \"series\": 100,\n    \"episode\": 1000\n}",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{url}}/media/statistics/create",
+                      "host": [
+                        "{{url}}"
+                      ],
+                      "path": [
+                        "media",
+                        "statistics",
+                        "create"
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": null,
+                  "header": [
+                    {
+                      "key": "Host",
+                      "value": "127.0.0.1:8000"
+                    },
+                    {
+                      "key": "Connection",
+                      "value": "close"
+                    },
+                    {
+                      "key": "X-Powered-By",
+                      "value": "PHP/8.5.3"
+                    },
+                    {
+                      "key": "Cache-Control",
+                      "value": "no-cache, private"
+                    },
+                    {
+                      "key": "Date",
+                      "value": "Mon, 23 Feb 2026 04:44:39 GMT"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n    \"media_statistics_id\": 2,\n    \"data\": {\n        \"movie\": 10,\n        \"series\": 100,\n        \"episode\": 1000\n    }\n}"
+                }
+              ]
+            },
+            {
+              "name": "保存 api调用",
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "key": "media_list_id",
+                      "value": "1000",
+                      "description": "媒体ID",
+                      "type": "text",
+                      "uuid": "4a936c15-5c79-4e26-b8fc-1bf39f0bcfef"
+                    },
+                    {
+                      "key": "token",
+                      "value": "l4x4NrudmaontYHyq1",
+                      "description": "媒体的TOKEN",
+                      "type": "text",
+                      "uuid": "e3ecbbee-133e-41c4-a0a2-73decd0ae136"
+                    },
+                    {
+                      "key": "movie",
+                      "value": "11",
+                      "description": "电影总数",
+                      "type": "text",
+                      "uuid": "de19e0b1-1dcc-4835-8e4a-3ef43a4389fd"
+                    },
+                    {
+                      "key": "series",
+                      "value": "12",
+                      "description": "电视剧总数",
+                      "type": "text",
+                      "uuid": "915d9db9-d4a2-4e99-b754-d00f179fa487"
+                    },
+                    {
+                      "key": "episode",
+                      "value": "12",
+                      "description": "电视集总数",
+                      "type": "text",
+                      "uuid": "bf20dadf-044a-4d84-9bd2-6dd08f1d8bf9"
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "{{url}}/media/statistics/save",
+                  "host": [
+                    "{{url}}"
+                  ],
+                  "path": [
+                    "media",
+                    "statistics",
+                    "save"
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "name": "保存 api调用",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [],
+                    "body": {
+                      "mode": "formdata",
+                      "formdata": [
+                        {
+                          "key": "media_list_id",
+                          "value": "1000",
+                          "description": "媒体ID",
+                          "type": "text",
+                          "uuid": "4a936c15-5c79-4e26-b8fc-1bf39f0bcfef"
+                        },
+                        {
+                          "key": "token",
+                          "value": "l4x4NrudmaontYHyq1",
+                          "description": "媒体的TOKEN",
+                          "type": "text",
+                          "uuid": "e3ecbbee-133e-41c4-a0a2-73decd0ae136"
+                        },
+                        {
+                          "key": "movie",
+                          "value": "11",
+                          "description": "电影总数",
+                          "type": "text",
+                          "uuid": "de19e0b1-1dcc-4835-8e4a-3ef43a4389fd"
+                        },
+                        {
+                          "key": "series",
+                          "value": "12",
+                          "description": "电视季总数",
+                          "type": "text",
+                          "uuid": "915d9db9-d4a2-4e99-b754-d00f179fa487"
+                        },
+                        {
+                          "key": "episode",
+                          "value": "12",
+                          "description": "电视集总数",
+                          "type": "text",
+                          "uuid": "bf20dadf-044a-4d84-9bd2-6dd08f1d8bf9"
+                        }
+                      ]
+                    },
+                    "url": {
+                      "raw": "{{url}}/media/statistics/save",
+                      "host": [
+                        "{{url}}"
+                      ],
+                      "path": [
+                        "media",
+                        "statistics",
+                        "save"
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": null,
+                  "header": [
+                    {
+                      "key": "Host",
+                      "value": "127.0.0.1:8000"
+                    },
+                    {
+                      "key": "Connection",
+                      "value": "close"
+                    },
+                    {
+                      "key": "X-Powered-By",
+                      "value": "PHP/8.5.3"
+                    },
+                    {
+                      "key": "Cache-Control",
+                      "value": "no-cache, private"
+                    },
+                    {
+                      "key": "Date",
+                      "value": "Mon, 23 Feb 2026 04:46:57 GMT"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n    \"media_statistics_id\": 3\n}"
+                }
+              ]
+            },
+            {
+              "name": "按日期汇总",
+              "request": {
+                "method": "GET",
+                "header": []
+              },
+              "response": []
+            },
+            {
+              "name": "删除",
+              "request": {
+                "method": "DELETE",
+                "header": [],
+                "url": {
+                  "raw": "{{url}}/media/statistics/delete?id=1&media_list_id=1000",
+                  "host": [
+                    "{{url}}"
+                  ],
+                  "path": [
+                    "media",
+                    "statistics",
+                    "delete"
+                  ],
+                  "query": [
+                    {
+                      "key": "id",
+                      "value": "1"
+                    },
+                    {
+                      "key": "media_list_id",
+                      "value": "1000"
+                    }
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "name": "删除",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [],
+                    "url": {
+                      "raw": "{{url}}/media/statistics/delete?id=1&media_list_id=1000",
+                      "host": [
+                        "{{url}}"
+                      ],
+                      "path": [
+                        "media",
+                        "statistics",
+                        "delete"
+                      ],
+                      "query": [
+                        {
+                          "key": "id",
+                          "value": "1"
+                        },
+                        {
+                          "key": "media_list_id",
+                          "value": "1000"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": null,
+                  "header": [
+                    {
+                      "key": "Host",
+                      "value": "127.0.0.1:8000"
+                    },
+                    {
+                      "key": "Connection",
+                      "value": "close"
+                    },
+                    {
+                      "key": "X-Powered-By",
+                      "value": "PHP/8.5.3"
+                    },
+                    {
+                      "key": "Cache-Control",
+                      "value": "no-cache, private"
+                    },
+                    {
+                      "key": "Date",
+                      "value": "Mon, 23 Feb 2026 04:59:49 GMT"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n    \"is_delete\": false\n}"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "列表",
+          "item": [
+            {
+              "name": "媒体列表",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{url}}/media/list/index?type&status&sort_order&sort_by",
+                  "host": [
+                    "{{url}}"
+                  ],
+                  "path": [
+                    "media",
+                    "list",
+                    "index"
+                  ],
+                  "query": [
+                    {
+                      "key": "type",
+                      "value": null,
+                      "description": "类型"
+                    },
+                    {
+                      "key": "status",
+                      "value": null,
+                      "description": "状态"
+                    },
+                    {
+                      "key": "sort_order",
+                      "value": null,
+                      "description": "排序字段"
+                    },
+                    {
+                      "key": "sort_by",
+                      "value": null,
+                      "description": "排序方式"
+                    }
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "新增或编辑",
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    // 存在则编辑\n    \"id\": 1001,\n    // 类型 必填\n    \"type\": \"emby\",\n    // 名称 建议为服的英文 1-50字符 必填\n    \"name\": \"张三的服2\",\n    // 标题 建议为服的中文 1-100字符\n    \"title\": null,\n    // 官网\n    \"website\": null,\n    // 宣传词 1-200字符\n    \"tagline\": null,\n    // 图标地址 必填\n    \"icon_path\": \"2026/02/23/P1eff7OieynIhsoSP93DGkPTv6kMF6fiEQAyT8wV.png\",\n    // 简介 1-500字符\n    \"description\": null,\n    // 标签 10个内\n    \"tags\": [\n        \"限免\"\n    ],\n    // 成立时间\n    \"establish_date\": null,\n    // 状态 必填\n    \"status\": \"unknown\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{url}}/media/list/updateOrCreate",
+                  "host": [
+                    "{{url}}"
+                  ],
+                  "path": [
+                    "media",
+                    "list",
+                    "updateOrCreate"
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "name": "新增或编辑",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n    // 存在则编辑\n    \"id\": null,\n    // 类型 必填\n    \"type\": \"emby\",\n    // 名称 建议为服的英文 1-50字符 必填\n    \"name\": \"张三的服\",\n    // 标题 建议为服的中文 1-100字符\n    \"title\": null,\n    // 官网\n    \"website\": null,\n    // 宣传词 1-200字符\n    \"tagline\": null,\n    // 图标地址 必填\n    \"icon_path\": \"https://medb.local/emby.png\",\n    // 简介 1-500字符\n    \"description\": null,\n    // 标签 10个内\n    \"tags\": [],\n    // 成立时间\n    \"establish_date\": null,\n    // 状态 必填\n    \"status\": \"unknown\"\n}",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{url}}/media/list/updateOrCreate",
+                      "host": [
+                        "{{url}}"
+                      ],
+                      "path": [
+                        "media",
+                        "list",
+                        "updateOrCreate"
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "",
+                  "header": [
+                    {
+                      "key": "Host",
+                      "value": "127.0.0.1:8000"
+                    },
+                    {
+                      "key": "Connection",
+                      "value": "close"
+                    },
+                    {
+                      "key": "X-Powered-By",
+                      "value": "PHP/8.5.3"
+                    },
+                    {
+                      "key": "Cache-Control",
+                      "value": "no-cache, private"
+                    },
+                    {
+                      "key": "Date",
+                      "value": "Mon, 23 Feb 2026 03:16:32 GMT"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [
+                    {
+                      "expires": "Invalid Date",
+                      "domain": "",
+                      "path": ""
+                    }
+                  ],
+                  "body": "{\n    \"id\": 1001,\n    \"token\": \"XxbnSHsMrRm9gfWM6a\"\n}"
+                }
+              ]
+            },
+            {
+              "name": "删除",
+              "request": {
+                "method": "DELETE",
+                "header": [],
+                "url": {
+                  "raw": "{{url}}/media/list/delete?id=1000",
+                  "host": [
+                    "{{url}}"
+                  ],
+                  "path": [
+                    "media",
+                    "list",
+                    "delete"
+                  ],
+                  "query": [
+                    {
+                      "key": "id",
+                      "value": "1000"
+                    }
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "name": "删除",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [],
+                    "url": {
+                      "raw": "{{url}}/media/list/delete?id=1000",
+                      "host": [
+                        "{{url}}"
+                      ],
+                      "path": [
+                        "media",
+                        "list",
+                        "delete"
+                      ],
+                      "query": [
+                        {
+                          "key": "id",
+                          "value": "1000"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": null,
+                  "header": [
+                    {
+                      "key": "Host",
+                      "value": "127.0.0.1:8000"
+                    },
+                    {
+                      "key": "Connection",
+                      "value": "close"
+                    },
+                    {
+                      "key": "X-Powered-By",
+                      "value": "PHP/8.5.3"
+                    },
+                    {
+                      "key": "Cache-Control",
+                      "value": "no-cache, private"
+                    },
+                    {
+                      "key": "Date",
+                      "value": "Mon, 23 Feb 2026 03:36:17 GMT"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n    \"is_delete\": false\n}"
+                }
+              ]
+            },
+            {
+              "name": "订阅",
+              "request": {
+                "method": "PUT",
+                "header": [],
+                "url": {
+                  "raw": "{{url}}/media/list/subscribe?id=1000",
+                  "host": [
+                    "{{url}}"
+                  ],
+                  "path": [
+                    "media",
+                    "list",
+                    "subscribe"
+                  ],
+                  "query": [
+                    {
+                      "key": "id",
+                      "value": "1000"
+                    }
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "name": "订阅",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [],
+                    "url": {
+                      "raw": "{{url}}/media/list/subscribe?id=1000",
+                      "host": [
+                        "{{url}}"
+                      ],
+                      "path": [
+                        "media",
+                        "list",
+                        "subscribe"
+                      ],
+                      "query": [
+                        {
+                          "key": "id",
+                          "value": "1000"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": null,
+                  "header": [
+                    {
+                      "key": "Host",
+                      "value": "127.0.0.1:8000"
+                    },
+                    {
+                      "key": "Connection",
+                      "value": "close"
+                    },
+                    {
+                      "key": "X-Powered-By",
+                      "value": "PHP/8.5.3"
+                    },
+                    {
+                      "key": "Cache-Control",
+                      "value": "no-cache, private"
+                    },
+                    {
+                      "key": "Date",
+                      "value": "Mon, 23 Feb 2026 03:41:23 GMT"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n    \"is_subscribe\": true\n}"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "文件",
+      "item": [
+        {
+          "name": "上传文件",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "file",
+                  "type": "file",
+                  "uuid": "4b2bb183-7bdf-4bf5-ae94-a3a626c4873d",
+                  "src": "/home/puzzle/Pictures/testprice.png"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{url}}/file/upload",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "file",
+                "upload"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "上传文件",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "key": "file",
+                      "type": "file",
+                      "uuid": "4b2bb183-7bdf-4bf5-ae94-a3a626c4873d",
+                      "src": "/home/puzzle/Pictures/testprice.png"
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "{{url}}/file/upload",
+                  "host": [
+                    "{{url}}"
+                  ],
+                  "path": [
+                    "file",
+                    "upload"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "",
+              "header": [
+                {
+                  "key": "Host",
+                  "value": "127.0.0.1:8000"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                },
+                {
+                  "key": "X-Powered-By",
+                  "value": "PHP/8.5.3"
+                },
+                {
+                  "key": "Cache-Control",
+                  "value": "no-cache, private"
+                },
+                {
+                  "key": "Date",
+                  "value": "Mon, 23 Feb 2026 05:29:55 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [
+                {
+                  "expires": "Invalid Date",
+                  "domain": "",
+                  "path": ""
+                }
+              ],
+              "body": "{\n    \"path\": \"2026/02/23/P1eff7OieynIhsoSP93DGkPTv6kMF6fiEQAyT8wV.png\"\n}"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "auth": {
+    "type": "jwt",
+    "jwt": [
+      {
+        "key": "isSecretBase64Encoded",
+        "value": false,
+        "type": "boolean"
+      },
+      {
+        "key": "payload",
+        "value": "{\n  \"iss\": \"http://localhost\",\n  \"exp\": 2771859583,\n  \"sub\": \"1000\",\n  \"is_admin\": false\n}",
+        "type": "string"
+      },
+      {
+        "key": "secret",
+        "value": "{{JWT_SECRET}}",
+        "type": "string"
+      },
+      {
+        "key": "algorithm",
+        "value": "HS256",
+        "type": "string"
+      },
+      {
+        "key": "addTokenTo",
+        "value": "header",
+        "type": "string"
+      },
+      {
+        "key": "headerPrefix",
+        "value": "Bearer",
+        "type": "string"
+      },
+      {
+        "key": "queryParamKey",
+        "value": "token",
+        "type": "string"
+      },
+      {
+        "key": "header",
+        "value": "{}",
+        "type": "string"
+      }
+    ]
+  },
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    }
+  ]
+}

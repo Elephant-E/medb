@@ -1,0 +1,13 @@
+{
+  "name": "medb",
+  "version": "1.0.0",
+  "private": true,
+  "description": "MEDB - Emby 媒体统计工具 (Vue 3 + Cloudflare)",
+  "scripts": {
+    "dev": "cd frontend && npm run dev",
+    "build": "cd frontend && npm run build",
+    "preview": "cd frontend && npm run preview",
+    "deploy:pages": "npm run build && npx wrangler pages deploy frontend/dist --project-name=medb",
+    "deploy:worker": "npm run build && npx wrangler deploy"
+  }
+}
