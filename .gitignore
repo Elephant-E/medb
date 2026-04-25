@@ -27,6 +27,7 @@ npm-debug.log*
 # Cloudflare Workers
 .wrangler/
 .workerd/
+worker-with-assets.js
 
 # Test coverage
 coverage/

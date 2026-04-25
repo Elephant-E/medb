@@ -7,7 +7,7 @@
     "dev": "cd frontend && npm run dev",
     "build": "cd frontend && npm run build",
     "preview": "cd frontend && npm run preview",
-    "deploy:pages": "npm run build && npx wrangler pages deploy frontend/dist --project-name=medb",
-    "deploy:worker": "npm run build && npx wrangler deploy"
+    "build:worker": "npm run build && node build-worker.cjs",
+    "deploy": "npm run build:worker && npx wrangler deploy"
   }
 }

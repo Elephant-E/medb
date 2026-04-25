@@ -1,4 +1,0 @@
-# Cloudflare Pages 配置
-build.command = "npm run build"
-build.output_directory = "frontend/dist"
-build.environment.NODE_VERSION = "18"

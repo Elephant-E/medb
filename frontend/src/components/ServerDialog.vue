@@ -404,8 +404,9 @@ async function processUpload(file) {
       
       // 使用 uploadResult 的 path（相对路径）
       form.value.icon_path = uploadResult.path;
-      // 拼接完整 URL 用于显示
-      form.value.icon_url = `https://medb.lat/${uploadResult.path}`;
+      // 拼接完整 URL 用于显示（使用 API_BASE）
+      const apiBase = import.meta.env.VITE_API_BASE || '/api';
+      form.value.icon_url = `${apiBase === '/api' ? '' : apiBase}/${uploadResult.path}`;
       
       // 刷新图标库
       await loadIconLibrary();

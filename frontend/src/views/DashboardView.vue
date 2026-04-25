@@ -464,9 +464,9 @@ const handleLogout = () => {
 };
 
 const handleLogin = () => {
-  // 跳转到 medb.lat 进行认证
+  // 跳转到后端进行认证（不经过 Worker 代理）
   const callbackUrl = window.location.origin + '/';
-  const loginUrl = new URL('/sign', 'https://medb.lat');
+  const loginUrl = new URL('https://medb.lat/sign');
   loginUrl.searchParams.set('url', callbackUrl);
   window.location.href = loginUrl.toString();
 };
